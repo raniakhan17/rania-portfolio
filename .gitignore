@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.turbo
+.vercel
+.DS_Store
+.env*.local
+npm-debug.log*
+public/design/
+public/images/design/cohort-12-mural-original.png
