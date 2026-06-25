@@ -299,6 +299,7 @@ export const experiences = [
     logo: 'BMA',
     title: 'Growth & GTM Engineer',
     company: 'Blue Modern Advisory',
+    url: 'https://bluemodernadvisory.com/',
     description: 'Building AI-powered growth systems, GTM workflows, and client-facing product strategy.',
     current: true,
   },
