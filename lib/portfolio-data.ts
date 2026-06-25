@@ -290,7 +290,7 @@ export const designWork = [
     description:
       'A creative practice spanning ceramic art, concert photography, visual systems, and an e-commerce business with thousands of sales globally.',
     thumb: 'art',
-    links: [],
+    links: ['https://drive.google.com/file/d/1NZL-P2g9QDB4f5SO7a16Rdfwt4_Xnyo_/view?usp=sharing'],
   },
 ];
 

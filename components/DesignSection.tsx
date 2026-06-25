@@ -44,7 +44,7 @@ function makeDesignProject(item: (typeof designWork)[number]): Project {
     links: item.links
       .filter((link) => link.startsWith('http'))
       .map((link) => ({
-        label: 'View project',
+        label: 'Open details',
         href: link,
       })),
   };
