@@ -96,18 +96,48 @@ export function DesignSection() {
         <div className="design-slider">
           <div className="slider-track">
             {sliderImages.map((item, index) => (
-              <figure className={`slide-card slide-${(index % 4) + 1}`} key={`${item.label}-${index}`}>
+              <button
+                type="button"
+                className={`slide-card slide-${(index % 4) + 1}`}
+                key={`${item.label}-${index}`}
+                onClick={() => setActiveArtifact(item)}
+                aria-label={`Open ${item.label} artifact`}
+              >
                 <span>
                   <img src={item.src} alt={`${item.label} artifact`} />
                 </span>
                 <figcaption>{item.label}</figcaption>
-              </figure>
+              </button>
             ))}
           </div>
         </div>
       </section>
 
       <ProjectModal project={activeDesign} onClose={() => setActiveDesign(null)} />
+
+      {activeArtifact && (
+        <div
+          className="artifact-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeArtifact.label}
+          onClick={() => setActiveArtifact(null)}
+        >
+          <button
+            type="button"
+            className="artifact-lightbox-close"
+            onClick={() => setActiveArtifact(null)}
+            aria-label="Close expanded image"
+          >
+            ×
+          </button>
+
+          <div className="artifact-lightbox-card" onClick={(event) => event.stopPropagation()}>
+            <img src={activeArtifact.src} alt={activeArtifact.label} />
+            <p>{activeArtifact.label}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
