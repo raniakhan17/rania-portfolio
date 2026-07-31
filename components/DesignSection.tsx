@@ -20,14 +20,14 @@ const sliderImages = [
   { label: 'Mural Work', src: '/images/design/muralwork.png' },
   { label: 'Tote', src: '/images/design/tote.png' },
   { label: 'Cube', src: '/images/design/cube.png' },
-  { label: 'Shoe', src: '/images/design/shoe.png' },
+  { label: 'Sailing Shoe', src: '/images/design/shoe.png' },
   { label: 'Lamp', src: '/images/design/lamp.png' },
   { label: 'TV', src: '/images/design/tv.png' },
   { label: 'Workshop', src: '/images/design/workshop.png' },
   { label: 'Mural Work', src: '/images/design/muralwork.png' },
   { label: 'Tote', src: '/images/design/tote.png' },
   { label: 'Cube', src: '/images/design/cube.png' },
-  { label: 'Shoe', src: '/images/design/shoe.png' },
+  { label: 'Sailing Shoe', src: '/images/design/shoe.png' },
 ];
 
 function makeDesignProject(item: (typeof designWork)[number]): Project {
