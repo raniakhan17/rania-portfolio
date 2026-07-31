@@ -52,6 +52,7 @@ function makeDesignProject(item: (typeof designWork)[number]): Project {
 
 export function DesignSection() {
   const [activeDesign, setActiveDesign] = useState<Project | null>(null);
+  const [activeArtifact, setActiveArtifact] = useState<{ label: string; src: string } | null>(null);
 
   return (
     <section className="panel" id="design">
