@@ -1,3 +1,4 @@
+import { CalendarDays } from 'lucide-react';
 import { experiences, honors } from '@/lib/portfolio-data';
 
 const experienceLogoImages: Record<string, string> = {
@@ -85,6 +86,16 @@ export function AboutSection() {
                   LinkedIn
                 </a>
                 <a href="mailto:raniakha@usc.edu">Email</a>
+                  <a
+                    className="calendar-contact-link"
+                    href="https://cal.com/rania-khan-6bkuxn/30min?overlayCalendar=true&date=2026-08-05"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Schedule a meeting"
+                    title="Schedule a meeting"
+                  >
+                    <CalendarDays size={18} strokeWidth={1.8} />
+                  </a>
               </div>
             </div>
           </section>
