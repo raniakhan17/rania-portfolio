@@ -10,8 +10,13 @@ export default function PortfolioLoader() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [visible, setVisible] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
+    const enterTimer = window.setTimeout(() => {
+      setHasEntered(true);
+    }, 50);
+
     const exitTimer = window.setTimeout(() => {
       setIsExiting(true);
     }, TOTAL_DURATION - FADE_DURATION);
@@ -21,6 +26,7 @@ export default function PortfolioLoader() {
     }, TOTAL_DURATION);
 
     return () => {
+      window.clearTimeout(enterTimer);
       window.clearTimeout(exitTimer);
       window.clearTimeout(removeTimer);
     };
@@ -165,8 +171,8 @@ export default function PortfolioLoader() {
         inset: 0,
         zIndex: 999999,
         background: '#000',
-        opacity: isExiting ? 0 : 1,
-        transition: `opacity ${FADE_DURATION}ms ease`,
+        opacity: isExiting ? 0 : hasEntered ? 1 : 0,
+        transition: `opacity ${FADE_DURATION}ms ease-in-out`,
         pointerEvents: 'auto',
       }}
       aria-hidden="true"
