@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const TOTAL_DURATION = 4000;
-const FADE_DURATION = 350;
+const TOTAL_DURATION = 2000;
+const FADE_DURATION = 300;
 const HEX_CHARS = '0123456789ABCDEF';
 
 export default function PortfolioLoader() {
