@@ -3135,3 +3135,12 @@ display: block !important;
   white-space: nowrap;
   border: 0;
 }
+
+/* Match Resume outline color to About contact icon borders */
+#about a[href*="resume"],
+#about a[href*="Resume"],
+#about a[href$=".pdf"],
+#about .resume-link {
+  border-color: currentColor !important;
+  color: inherit;
+}
