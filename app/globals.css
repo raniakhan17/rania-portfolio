@@ -3002,3 +3002,28 @@ display: block !important;
   position: relative;
   z-index: 1;
 }
+
+/* Make kinetic hero background visibly sit behind header content */
+.hero .hero-kinetic-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+
+.hero .hero-kinetic-bg canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0.85 !important;
+}
+
+.hero > *:not(.hero-kinetic-bg) {
+  position: relative !important;
+  z-index: 2 !important;
+}
