@@ -1,4 +1,4 @@
-import { CalendarDays } from 'lucide-react';
+import { CalendarDays, Mail, Linkedin } from 'lucide-react';
 import { experiences, honors } from '@/lib/portfolio-data';
 
 const experienceLogoImages: Record<string, string> = {
@@ -83,9 +83,13 @@ export function AboutSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LinkedIn
-                </a>
-                <a href="mailto:raniakha@usc.edu">Email</a>
+                    <Linkedin size={18} strokeWidth={1.9} />
+                    <span className="sr-only">LinkedIn</span>
+                  </a>
+                <a href="mailto:raniakha@usc.edu">
+                    <Mail size={18} strokeWidth={1.9} />
+                    <span className="sr-only">Email</span>
+                  </a>
                   <a
                     className="calendar-contact-link"
                     href="https://cal.com/rania-khan-6bkuxn/30min?overlayCalendar=true&date=2026-08-05"
@@ -94,7 +98,8 @@ export function AboutSection() {
                     aria-label="Schedule a meeting"
                     title="Schedule a meeting"
                   >
-                    <CalendarDays size={18} strokeWidth={1.8} />
+                    <CalendarDays size={18} strokeWidth={1.9} />
+                    <span className="sr-only">Schedule a meeting</span>
                   </a>
               </div>
             </div>
