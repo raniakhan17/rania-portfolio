@@ -72,6 +72,7 @@ export function AboutSection() {
 
               <div className="about-mini-links">
                 <a
+                  className="resume-link"
                   href="https://docs.google.com/document/d/1gLM75D9JQrzzoJa5HI1I2e3mks1qd_DHFUjUwPR-czA/edit?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
