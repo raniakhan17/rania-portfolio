@@ -29,10 +29,12 @@ export default function PortfolioLoader() {
   useEffect(() => {
     if (!visible) return;
 
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const canvasMaybe = canvasRef.current;
+    if (!canvasMaybe) return;
 
-    const ctxMaybe = canvas.getContext('2d');
+    const canvasEl = canvasMaybe;
+
+    const ctxMaybe = canvasEl.getContext('2d');
     if (!ctxMaybe) return;
 
     const ctx = ctxMaybe;
@@ -43,10 +45,10 @@ export default function PortfolioLoader() {
     function resizeCanvas() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-      canvas.width = Math.floor(window.innerWidth * dpr);
-      canvas.height = Math.floor(window.innerHeight * dpr);
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
+      canvasEl.width = Math.floor(window.innerWidth * dpr);
+      canvasEl.height = Math.floor(window.innerHeight * dpr);
+      canvasEl.style.width = `${window.innerWidth}px`;
+      canvasEl.style.height = `${window.innerHeight}px`;
     }
 
     function render(time: number) {
@@ -54,14 +56,14 @@ export default function PortfolioLoader() {
       const height = window.innerHeight;
 
       if (
-        canvas.width !== Math.floor(width * dpr) ||
-        canvas.height !== Math.floor(height * dpr)
+        canvasEl.width !== Math.floor(width * dpr) ||
+        canvasEl.height !== Math.floor(height * dpr)
       ) {
         resizeCanvas();
       }
 
       ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
       ctx.scale(dpr, dpr);
 
       ctx.fillStyle = 'rgba(0, 0, 0, 0.97)';
