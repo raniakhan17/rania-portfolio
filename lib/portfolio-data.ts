@@ -329,7 +329,6 @@ export const experiences = [
     logo: 'DS',
     title: 'Lead Mentor & Inventor',
     company: 'discoverSTEM',
-    url: 'https://discoverstem.info/',
     description: 'Mentoring students through innovation, research, entrepreneurship, and patentable project development.',
   },
 ];
