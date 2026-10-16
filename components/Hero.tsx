@@ -17,10 +17,6 @@ export function Hero() {
 
       <div className="intro">
         <HeroTitle />
-        <p>
-          I build products, ventures, and systems across AI, design, health,
-          accessibility, and emerging technology.
-        </p>
       </div>
     </section>
   );
