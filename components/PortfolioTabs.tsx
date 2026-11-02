@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { AboutSection } from '@/components/AboutSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { ProjectModal } from '@/components/ProjectModal';
+import { CarouselCaseStudy } from '@/components/CarouselCaseStudy';
 import { designWork, type Project } from '@/lib/portfolio-data';
 
 const designImages: Record<string, string> = {
@@ -47,10 +48,17 @@ const experiments = [
 function DesignSlider() {
   const track = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<Project | null>(null);
-  const cards: Project[] = [
-    ...designWork.map(makeDesignProject),
-
-  ];
+  const cards = designWork.map(makeDesignProject);
+  const muralIndex = cards.findIndex((project) => project.variant === 'mural');
+  cards.splice(muralIndex >= 0 ? muralIndex + 1 : 1, 0, {
+    title: 'Carousel',
+    category: 'Physical Computing · Digital Fabrication',
+    description: 'A motor-driven miniature carousel combining sequential LED lighting, 3D-printed horses, and a laser-cut birch enclosure.',
+    process: '',
+    variant: 'design-carousel',
+    image: '/images/design/carousel/finished.jpg',
+    tags: ['Physical Computing', 'Stepper Motor', '3D Printing', 'Laser Cutting'],
+  });
   function move(direction: number) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     track.current?.scrollBy({ left: direction * 324, behavior: reduced ? 'auto' : 'smooth' });
@@ -87,7 +95,9 @@ function DesignSlider() {
           ))}
         </div>
       </div>
-      <ProjectModal project={active} onClose={() => setActive(null)} />
+      {active?.variant === 'design-carousel'
+        ? <CarouselCaseStudy onClose={() => setActive(null)} />
+        : <ProjectModal project={active} onClose={() => setActive(null)} />}
       <style jsx>{`
         .experiment-strip { margin-top: 40px; overflow: hidden; padding: 6px 0 20px; }
         .experiment-track { display: flex; width: max-content; animation: archivePhotoDrift 38s linear infinite; }
