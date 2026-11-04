@@ -94,8 +94,8 @@ function DesignSlider() {
         {cards.map((project, index) => (
           <button className="archive-card" type="button" key={`${project.title}-${index}`} onClick={() => setActive(project)} aria-label={`View ${project.title}`}>
             <span className="archive-image"><img src={project.image} alt={project.title} loading="lazy" /></span>
-            <span className="archive-label"><span>{project.title}</span><span aria-hidden="true">↗</span></span>
-            <span className="archive-category">{project.category}</span>
+            <span className="archive-label"><span>{project.variant === 'ace' ? 'F1 Racetrack Proposal' : project.title}</span><span aria-hidden="true">↗</span></span>
+            <span className="archive-category">{project.variant === 'ace' ? 'ACE Mentor Program · Concept Project' : project.category}</span>
             <span className="archive-skills" aria-label="Skills and tools">
               {project.tags?.map((tag) => <span className="archive-skill" key={tag}>{tag}</span>)}
             </span>
