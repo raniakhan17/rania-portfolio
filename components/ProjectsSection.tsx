@@ -294,7 +294,7 @@ export function ProjectsSection() {
         @keyframes consultingTextRoll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
         @media (prefers-reduced-motion: reduce) { #projects .consulting-roll-heading.is-visible .consulting-roll-track { animation: none; } }
 
-        #projects .portfolio-builds-grid { width: 100%; max-width: 960px; margin-inline: auto; column-gap: 24px; row-gap: 28px; }
+        #projects .portfolio-builds-grid { width: 100%; max-width: 960px; margin-inline: 0; column-gap: 24px; row-gap: 28px; }
         #projects .portfolio-builds-grid .card { gap: 14px; border: 0; background: transparent; box-shadow: none; }
         #projects .portfolio-builds-grid .media { border: 0 !important; border-radius: 20px; box-shadow: none !important; }
         #projects .portfolio-builds-grid .media::after { border: 0 !important; box-shadow: none !important; background: none !important; }

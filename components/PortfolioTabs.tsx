@@ -15,6 +15,13 @@ const designImages: Record<string, string> = {
   art: '/images/design/ceramics.png',
 };
 
+const designSkills: Record<string, string[]> = {
+  mural: ['Art Direction', 'Project Management', 'Visual Design'],
+  ace: ['Architecture', 'Engineering Design', 'Concept Development'],
+  pltw: ['Engineering Design', 'Prototyping', 'Problem Solving'],
+  art: ['Ceramics', 'Photography', 'Visual Design', 'E-commerce'],
+};
+
 function makeDesignProject(item: (typeof designWork)[number]): Project {
   const image = designImages[item.thumb];
 
@@ -25,7 +32,7 @@ function makeDesignProject(item: (typeof designWork)[number]): Project {
     process: item.description,
     variant: item.thumb,
     image,
-    tags: [item.tag],
+    tags: designSkills[item.thumb] ?? [item.tag],
     links: item.links
       .filter((link) => link.startsWith('http'))
       .map((link) => ({
@@ -89,6 +96,9 @@ function DesignSlider() {
             <span className="archive-image"><img src={project.image} alt={project.title} loading="lazy" /></span>
             <span className="archive-label"><span>{project.title}</span><span aria-hidden="true">↗</span></span>
             <span className="archive-category">{project.category}</span>
+            <span className="archive-skills" aria-label="Skills and tools">
+              {project.tags?.map((tag) => <span className="archive-skill" key={tag}>{tag}</span>)}
+            </span>
           </button>
         ))}
       </div>
@@ -132,12 +142,14 @@ function DesignSlider() {
         .archive-controls { display: flex; gap: 8px; }
         .archive-controls button { width: 36px; height: 36px; border-radius: 50%; background: var(--line, #f0f1f3); color: var(--primary); font-size: 18px; }
         .archive-track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x proximity; padding: 4px 2px 20px; scrollbar-width: thin; }
-        .archive-card { flex: 0 0 300px; min-width: 0; padding: 0; text-align: left; background: transparent; color: var(--primary); scroll-snap-align: start; }
+        .archive-card { align-self: flex-start; flex: 0 0 300px; min-width: 0; padding: 0; text-align: left; background: transparent; color: var(--primary); scroll-snap-align: start; }
         .archive-image { display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 18px; background: transparent; }
         .archive-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 300ms; }
         .archive-card:hover img { transform: scale(1.035); }
         .archive-label { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 16px; line-height: 1.4; }
         .archive-category { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+        .archive-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+        .archive-skill { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 10px; line-height: 1.4; }
         .archive-card:focus-visible, .archive-controls button:focus-visible, .archive-track:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
         @media(max-width: 600px) { .archive-card { flex-basis: 78%; } .archive-heading h2 { font-size: 24px; } }
         @media(prefers-reduced-motion: reduce) { .archive-image img { transition: none; } .archive-card:hover img { transform: none; } }
