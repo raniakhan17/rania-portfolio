@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { AboutSection } from '@/components/AboutSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { ProjectModal } from '@/components/ProjectModal';
+import { PhotoboothCaseStudy } from '@/components/PhotoboothCaseStudy';
 import { CarouselCaseStudy } from '@/components/CarouselCaseStudy';
 import { designWork, type Project } from '@/lib/portfolio-data';
 
@@ -59,6 +60,16 @@ function DesignSlider() {
     image: '/images/design/carousel/finished.jpg',
     tags: ['Physical Computing', 'Stepper Motor', '3D Printing', 'Laser Cutting'],
   });
+  const carouselIndex = cards.findIndex((project) => project.variant === 'design-carousel');
+  cards.splice(carouselIndex + 1, 0, {
+    title: 'Photobooth',
+    category: 'Physical Computing · Product Design',
+    description: 'A compact photobooth pairing physical controls, a digital capture experience, and printed photo keepsakes.',
+    process: '',
+    variant: 'design-photobooth',
+    image: '/images/design/photobooth/cover.jpg',
+    tags: ['Product Design', '3D Modeling', 'Digital Fabrication', 'Interaction Design'],
+  });
   function move(direction: number) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     track.current?.scrollBy({ left: direction * 324, behavior: reduced ? 'auto' : 'smooth' });
@@ -97,7 +108,9 @@ function DesignSlider() {
       </div>
       {active?.variant === 'design-carousel'
         ? <CarouselCaseStudy onClose={() => setActive(null)} />
-        : <ProjectModal project={active} onClose={() => setActive(null)} />}
+        : active?.variant === 'design-photobooth'
+          ? <PhotoboothCaseStudy onClose={() => setActive(null)} />
+          : <ProjectModal project={active} onClose={() => setActive(null)} />}
       <style jsx>{`
         .experiment-strip { margin-top: 40px; overflow: hidden; padding: 6px 0 20px; }
         .experiment-track { display: flex; width: max-content; animation: archivePhotoDrift 38s linear infinite; }
