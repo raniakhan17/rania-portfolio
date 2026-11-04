@@ -68,7 +68,7 @@ function DesignSlider() {
     tags: ['Physical Computing', 'Stepper Motor', '3D Printing', 'Laser Cutting'],
   });
   const carouselIndex = cards.findIndex((project) => project.variant === 'design-carousel');
-  cards.splice(carouselIndex + 1, 0, {
+  cards.splice(carouselIndex, 0, {
     title: 'Photobooth',
     category: 'Physical Computing · Product Design',
     description: 'A compact photobooth pairing physical controls, a digital capture experience, and printed photo keepsakes.',
