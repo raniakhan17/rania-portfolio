@@ -134,7 +134,7 @@ function DesignSlider() {
         .archive-track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x proximity; padding: 4px 2px 20px; scrollbar-width: thin; }
         .archive-card { flex: 0 0 300px; min-width: 0; padding: 0; text-align: left; background: transparent; color: var(--primary); scroll-snap-align: start; }
         .archive-image { display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 18px; background: transparent; }
-        .archive-image img { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform 300ms; }
+        .archive-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 300ms; }
         .archive-card:hover img { transform: scale(1.035); }
         .archive-label { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 16px; line-height: 1.4; }
         .archive-category { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
