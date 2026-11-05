@@ -5,6 +5,7 @@ import { AboutSection } from '@/components/AboutSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { ProjectModal } from '@/components/ProjectModal';
 import { PhotoboothCaseStudy } from '@/components/PhotoboothCaseStudy';
+import { MuralCaseStudy } from '@/components/MuralCaseStudy';
 import { CarouselCaseStudy } from '@/components/CarouselCaseStudy';
 import { designWork, type Project } from '@/lib/portfolio-data';
 
@@ -120,7 +121,9 @@ function DesignSlider() {
         ? <CarouselCaseStudy onClose={() => setActive(null)} />
         : active?.variant === 'design-photobooth'
           ? <PhotoboothCaseStudy onClose={() => setActive(null)} />
-          : <ProjectModal project={active} onClose={() => setActive(null)} />}
+          : active?.variant === 'mural'
+            ? <MuralCaseStudy onClose={() => setActive(null)} />
+            : <ProjectModal project={active} onClose={() => setActive(null)} />}
       <style jsx>{`
         .experiment-strip { margin-top: 40px; overflow: hidden; padding: 6px 0 20px; }
         .experiment-track { display: flex; width: max-content; animation: archivePhotoDrift 38s linear infinite; }
