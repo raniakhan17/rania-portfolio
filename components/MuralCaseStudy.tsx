@@ -52,14 +52,12 @@ export function MuralCaseStudy({ onClose }: { onClose: () => void }) {
             <h3>The time is NOW</h3>
             <p>The concept combines time and space through a train traveling toward the future. Clocks, orbital lines, and space imagery connect the journey to the idea that our time to create begins now. An isometric map at the bottom anchors the composition in cultural landmarks representing our roots, while open-ended pathways leave room for where we go next.</p>
             <figure><img src={`${assets}/sketch.jpg`} alt="Color concept exploring the train, clocks, space, and isometric landmarks." loading="lazy" /><figcaption>Color concept exploring the train, clocks, space, and isometric landmarks.</figcaption></figure>
-            <figure><img src={`${assets}/color-study.jpg`} alt="Line drawing developing the time-and-space composition." loading="lazy" /><figcaption>Line drawing developing the time-and-space composition.</figcaption></figure>
           </section>
           <section>
             <p className="mural-eyebrow">02 / VISUAL DEVELOPMENT</p>
             <h3>Build one shared visual language</h3>
             <p>Concept boards explore how the train, lettering, cultural landmarks, and student characters can work as one composition. Color studies and layout iterations develop the relationship between the mural’s larger narrative and its smaller personal details.</p>
             <figure><img src={`${assets}/concept-board.jpg`} alt="Layout iteration exploring the composition around the wall’s openings." loading="lazy" /><figcaption>Layout iteration exploring the composition around the wall’s openings.</figcaption></figure>
-            <figure><img src={`${assets}/wall-grid.jpg`} alt="Gridded layout mapping the design to the wall’s proportions and openings." loading="lazy" /><figcaption>Gridded layout mapping the design to the wall’s proportions and openings.</figcaption></figure>
           </section>
           <section>
             <p className="mural-eyebrow">03 / SCALE &amp; SITE</p>
