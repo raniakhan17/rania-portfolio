@@ -86,7 +86,8 @@ function AimsCaseStudy({ project, onClose }: { project: Project; onClose: () => 
         <button className="aims-close" ref={close} type="button" onClick={onClose} aria-label="Close patent case study">×</button>
         <header>
           <p className="aims-eyebrow">{isAeris ? 'AERIS / HEALTH TECHNOLOGY & AI' : isEcho ? 'ECHO / WEARABLE AI & ACCESSIBILITY' : isShip ? 'SHIP / INVENTION & PATENT' : 'AIMS / INVENTION & PATENT'}</p>
-          <h2 id="aims-case-title">{isAeris ? 'Aeris — exploring earlier Parkinson’s screening' : isEcho ? 'Echo — turning signs into speech' : isShip ? 'SHIP — Helmet-Integrated Impact Detection' : 'Active security system and a method to detect and neutralize armed intruders'}</h2>
+          <h2 id="aims-case-title">{isAeris ? 'Aeris — exploring earlier Parkinson’s screening' : isEcho ? 'Echo — turning signs into speech' : isShip ? 'SHIP — Safety Helmet Injury Protection' : 'AIMS — Armed Intrusion Management Systems'}</h2>
+          {isShip ? <p className="patent-subtitle">Helmet-Integrated Impact Detection</p> : !isAeris && !isEcho ? <p className="patent-subtitle">Active Security &amp; Armed Intrusion Response</p> : null}
           <div className="aims-badges">{isAeris ? <><span>Low-cost e-nose concept</span><span>Non-invasive sampling</span><span>Research & development</span></> : isEcho ? <><span>Wearable AI</span><span>Accessibility</span><span>Prototype & user validation</span></> : isShip ? <><span>Patent pending</span><span>Dual-force sensing</span><span>Cumulative impact tracking</span></> : <><span>Patent published</span><span>Reviewed by US DoD</span></>}</div>
           {isEcho && <p>A wearable EMG-based sign language recognition system translating muscle signals into real-time speech, expanding communication access for the Deaf and hard-of-hearing communities. Received funding from LvlUp Ventures and a grant from the USC Marshall Artificial Intelligence Association.</p>}
         </header>
@@ -142,6 +143,7 @@ function AimsCaseStudy({ project, onClose }: { project: Project; onClose: () => 
         .aims-close { position: sticky; float: right; top: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--line); color: var(--primary); font-size: 24px; z-index: 2; }
         .aims-eyebrow { font-size: 11px; letter-spacing: .12em; color: var(--muted); }
         h2 { max-width: 760px; font-size: clamp(26px,4vw,40px); line-height: 1.2; margin: 16px 0 24px; }
+        .patent-subtitle { margin: -8px 0 24px; font-size: 17px; line-height: 1.5; color: var(--muted); }
         .aims-badges { display: flex; gap: 10px; flex-wrap: wrap; }
         .aims-badges span { padding: 7px 12px; border-radius: 30px; background: var(--line); font-size: 12px; }
         .aims-cover { display: block; width: 100%; max-height: 450px; object-fit: contain; border-radius: 16px; margin: 32px 0; }
