@@ -44,13 +44,13 @@ export function MuralCaseStudy({ onClose }: { onClose: () => void }) {
         <div className="modal-content">
           <p className="modal-kicker">USC Iovine and Young Academy · Cohort 12</p>
           <h2 id="mural-title">Cohort 12 Mural</h2>
-          <div className="modal-tags"><span>Art Director &amp; Project Manager</span><span>30-foot mural</span><span>Visual Storytelling</span></div>
-          <p className="modal-description">A 30-foot mural connecting our cohort’s cultural roots with the futures we hope to build. As Art Director and Project Manager, I helped shape a shared visual identity around time, space, and one central message: for IYA, the time is NOW.</p>
+          <div className="modal-tags"><span>Art Director &amp; Project Manager</span><span>30-foot mural</span><span>Visual Storytelling</span><span>XR Scavenger Hunt</span></div>
+          <p className="modal-description">A 30-foot, midnight-themed mural celebrating Cohort 12 through 12:00 and the message “The Future Is Now.” As Art Director and Project Manager, I helped shape a shared visual identity connecting the cohort’s roots and future paths. An XR scavenger hunt connected the physical artwork with an interactive digital experience.</p>
           <figure><img src="/images/design/cohort-12-mural.png" alt="Cohort 12 mural bringing together time, space, and the Academy’s shared identity" /></figure>
           <section>
             <p className="mural-eyebrow">01 / CONCEPT</p>
-            <h3>The time is NOW</h3>
-            <p>The concept combines time and space through a train traveling toward the future. Clocks, orbital lines, and space imagery connect the journey to the idea that our time to create begins now. An isometric map at the bottom anchors the composition in cultural landmarks representing our roots, while open-ended pathways leave room for where we go next.</p>
+            <h3>12:00 midnight. The Future Is Now.</h3>
+            <p>The midnight theme connects Cohort 12 with 12:00: the start of a new day and a visual expression of “The Future Is Now.” Clocks, a train traveling through space, and celestial imagery bring that idea into the composition. An isometric map at the bottom represents our cultural roots through landmarks and our future paths through open-ended pathways.</p>
             <figure><img src={`${assets}/concept-board.jpg`} alt="Layout iteration exploring the composition around the wall’s openings." loading="lazy" /><figcaption>Layout iteration exploring the composition around the wall’s openings.</figcaption></figure>
           </section>
           <section>
@@ -73,9 +73,9 @@ export function MuralCaseStudy({ onClose }: { onClose: () => void }) {
             <figure><img src={`${assets}/painting.jpg`} alt="Painting the mural and developing the lettering and surrounding details." loading="lazy" /><figcaption>Painting the mural and developing the lettering and surrounding details.</figcaption></figure>
           </section>
           <section>
-            <p className="mural-eyebrow">05 / STUDENT IDENTITY</p>
-            <h3>Make room for every astronaut</h3>
-            <p>Spaces for small astronaut characters were designed to represent the students within the larger journey. The planned technology component uses a QR code to let viewers explore the students represented on the mural, connecting the physical artwork with individual identities.</p>
+            <p className="mural-eyebrow">05 / XR EXPERIENCE</p>
+            <h3>Extend the mural through an XR scavenger hunt</h3>
+            <p>The technology component was an XR scavenger hunt connected to the mural, extending the experience beyond viewing the artwork. The physical composition and digital experience connected visual storytelling with exploration. Small astronaut characters represented students within the cohort’s shared journey.</p>
           </section>
         </div>
         <style jsx>{`
